@@ -1,0 +1,6 @@
+framework module Pods_VPN2SSLocal {
+  umbrella header "Pods-VPN2SSLocal-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module ssLocal {
+  umbrella header "ssLocal.h"
+
+  export *
+  module * { export * }
+}

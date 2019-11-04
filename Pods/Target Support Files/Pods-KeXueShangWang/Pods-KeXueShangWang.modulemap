@@ -1,0 +1,6 @@
+framework module Pods_KeXueShangWang {
+  umbrella header "Pods-KeXueShangWang-umbrella.h"
+
+  export *
+  module * { export * }
+}

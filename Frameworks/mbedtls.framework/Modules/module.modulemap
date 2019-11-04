@@ -1,0 +1,6 @@
+framework module mbedtls {
+  umbrella header "mbedtls.h"
+
+  export *
+  module * { export * }
+}

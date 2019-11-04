@@ -1,0 +1,6 @@
+framework module libmaxminddb {
+  umbrella header "libmaxminddb.h"
+
+  export *
+  module * { export * }
+}

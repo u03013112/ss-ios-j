@@ -1,0 +1,716 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5E9EDB2A5110C262952DA210 /* Pods_VPN2SSLocal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5421D52D8CF9DA9A4B5AA7D2 /* Pods_VPN2SSLocal.framework */; };
+		A7CB772D236C082900BA11A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB772C236C082900BA11A7 /* AppDelegate.swift */; };
+		A7CB772F236C082900BA11A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB772E236C082900BA11A7 /* ViewController.swift */; };
+		A7CB7732236C082900BA11A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7CB7730236C082900BA11A7 /* Main.storyboard */; };
+		A7CB7734236C082C00BA11A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CB7733236C082C00BA11A7 /* Assets.xcassets */; };
+		A7CB7737236C082C00BA11A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7CB7735236C082C00BA11A7 /* LaunchScreen.storyboard */; };
+		A7CB7746236C0A8200BA11A7 /* PacketTunnelProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CB7745236C0A8200BA11A7 /* PacketTunnelProvider.m */; };
+		A7CB774B236C0A8200BA11A7 /* VPN2SSLocal.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A7CB7742236C0A8200BA11A7 /* VPN2SSLocal.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A7CB7756236C0CCB00BA11A7 /* SimpleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB7755236C0CCB00BA11A7 /* SimpleVC.swift */; };
+		A7CB7758236C0CFC00BA11A7 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB7757236C0CFC00BA11A7 /* HTTP.swift */; };
+		A7CB775A236C1A7000BA11A7 /* SimpleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB7759236C1A7000BA11A7 /* SimpleManager.swift */; };
+		A7CB775C236C1B5600BA11A7 /* UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB775B236C1B5600BA11A7 /* UUID.swift */; };
+		A7CB775E236C248D00BA11A7 /* ProviderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB775D236C248D00BA11A7 /* ProviderManager.swift */; };
+		A7CB7760236C307800BA11A7 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB775F236C307800BA11A7 /* NetworkExtension.framework */; };
+		A7CB7761236C309C00BA11A7 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB775F236C307800BA11A7 /* NetworkExtension.framework */; };
+		A7CB7763236C446400BA11A7 /* ssLocal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB7762236C446400BA11A7 /* ssLocal.framework */; };
+		A7CB7765236C4B1500BA11A7 /* ShadowPath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB7764236C4B1400BA11A7 /* ShadowPath.framework */; };
+		A7CB7766236F02CE00BA11A7 /* ShadowPath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB7764236C4B1400BA11A7 /* ShadowPath.framework */; };
+		A7CB7767236F02CE00BA11A7 /* ShadowPath.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB7764236C4B1400BA11A7 /* ShadowPath.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A7CB7769236F02D700BA11A7 /* ssLocal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB7762236C446400BA11A7 /* ssLocal.framework */; };
+		A7CB776A236F02D700BA11A7 /* ssLocal.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB7762236C446400BA11A7 /* ssLocal.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A7CB7779236F048D00BA11A7 /* libmaxminddb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB7778236F048D00BA11A7 /* libmaxminddb.framework */; };
+		A7CB777C236F04D200BA11A7 /* c_ares.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB777B236F04D200BA11A7 /* c_ares.framework */; };
+		A7CB777D236F04D200BA11A7 /* c_ares.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB777B236F04D200BA11A7 /* c_ares.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A7CB7780236F051300BA11A7 /* libmaxminddb.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB777E236F051300BA11A7 /* libmaxminddb.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A7CB7782236F054300BA11A7 /* libsodium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB7781236F054300BA11A7 /* libsodium.framework */; };
+		A7CB7783236F054300BA11A7 /* libsodium.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB7781236F054300BA11A7 /* libsodium.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A7CB7785236F059400BA11A7 /* mbedtls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB7784236F059400BA11A7 /* mbedtls.framework */; };
+		A7CB7786236F059400BA11A7 /* mbedtls.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB7784236F059400BA11A7 /* mbedtls.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A7CB7788236F497400BA11A7 /* JRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB7787236F497300BA11A7 /* JRule.swift */; };
+		CD3E6EFD1D8AC311146E662B /* Pods_KeXueShangWang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06553099D6337F230EA28BD9 /* Pods_KeXueShangWang.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A7CB7749236C0A8200BA11A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A7CB7721236C082900BA11A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A7CB7741236C0A8200BA11A7;
+			remoteInfo = VPN2SSLocal;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A7CB774F236C0A8200BA11A7 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A7CB774B236C0A8200BA11A7 /* VPN2SSLocal.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7CB7768236F02CF00BA11A7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A7CB776A236F02D700BA11A7 /* ssLocal.framework in Embed Frameworks */,
+				A7CB777D236F04D200BA11A7 /* c_ares.framework in Embed Frameworks */,
+				A7CB7780236F051300BA11A7 /* libmaxminddb.framework in Embed Frameworks */,
+				A7CB7783236F054300BA11A7 /* libsodium.framework in Embed Frameworks */,
+				A7CB7786236F059400BA11A7 /* mbedtls.framework in Embed Frameworks */,
+				A7CB7767236F02CE00BA11A7 /* ShadowPath.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		06553099D6337F230EA28BD9 /* Pods_KeXueShangWang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeXueShangWang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5421D52D8CF9DA9A4B5AA7D2 /* Pods_VPN2SSLocal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VPN2SSLocal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56FABF1FF3C54E23F8B7DD9D /* Pods-KeXueShangWang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeXueShangWang.release.xcconfig"; path = "Target Support Files/Pods-KeXueShangWang/Pods-KeXueShangWang.release.xcconfig"; sourceTree = "<group>"; };
+		90344851807454BE1311F6D3 /* Pods-VPN2SSLocal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VPN2SSLocal.debug.xcconfig"; path = "Target Support Files/Pods-VPN2SSLocal/Pods-VPN2SSLocal.debug.xcconfig"; sourceTree = "<group>"; };
+		A7CB7729236C082900BA11A7 /* KeXueShangWang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeXueShangWang.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7CB772C236C082900BA11A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A7CB772E236C082900BA11A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A7CB7731236C082900BA11A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A7CB7733236C082C00BA11A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A7CB7736236C082C00BA11A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A7CB7738236C082C00BA11A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7CB7742236C0A8200BA11A7 /* VPN2SSLocal.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VPN2SSLocal.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7CB7744236C0A8200BA11A7 /* PacketTunnelProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PacketTunnelProvider.h; sourceTree = "<group>"; };
+		A7CB7745236C0A8200BA11A7 /* PacketTunnelProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PacketTunnelProvider.m; sourceTree = "<group>"; };
+		A7CB7747236C0A8200BA11A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7CB7748236C0A8200BA11A7 /* VPN2SSLocal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VPN2SSLocal.entitlements; sourceTree = "<group>"; };
+		A7CB7750236C0AAC00BA11A7 /* KeXueShangWang.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeXueShangWang.entitlements; sourceTree = "<group>"; };
+		A7CB7755236C0CCB00BA11A7 /* SimpleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleVC.swift; sourceTree = "<group>"; };
+		A7CB7757236C0CFC00BA11A7 /* HTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
+		A7CB7759236C1A7000BA11A7 /* SimpleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleManager.swift; sourceTree = "<group>"; };
+		A7CB775B236C1B5600BA11A7 /* UUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UUID.swift; sourceTree = "<group>"; };
+		A7CB775D236C248D00BA11A7 /* ProviderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderManager.swift; sourceTree = "<group>"; };
+		A7CB775F236C307800BA11A7 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		A7CB7762236C446400BA11A7 /* ssLocal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ssLocal.framework; path = Frameworks/ssLocal.framework; sourceTree = "<group>"; };
+		A7CB7764236C4B1400BA11A7 /* ShadowPath.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShadowPath.framework; path = Frameworks/ShadowPath.framework; sourceTree = "<group>"; };
+		A7CB7778236F048D00BA11A7 /* libmaxminddb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libmaxminddb.framework; path = Frameworks/libmaxminddb.framework; sourceTree = "<group>"; };
+		A7CB777B236F04D200BA11A7 /* c_ares.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = c_ares.framework; path = Frameworks/c_ares.framework; sourceTree = "<group>"; };
+		A7CB777E236F051300BA11A7 /* libmaxminddb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libmaxminddb.framework; path = Frameworks/libmaxminddb.framework; sourceTree = "<group>"; };
+		A7CB7781236F054300BA11A7 /* libsodium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libsodium.framework; path = Frameworks/libsodium.framework; sourceTree = "<group>"; };
+		A7CB7784236F059400BA11A7 /* mbedtls.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mbedtls.framework; path = Frameworks/mbedtls.framework; sourceTree = "<group>"; };
+		A7CB7787236F497300BA11A7 /* JRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRule.swift; sourceTree = "<group>"; };
+		C4AACE9F5955B45E86F3A648 /* Pods-VPN2SSLocal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VPN2SSLocal.release.xcconfig"; path = "Target Support Files/Pods-VPN2SSLocal/Pods-VPN2SSLocal.release.xcconfig"; sourceTree = "<group>"; };
+		FC0AC31AC3D85BC56FD65B9A /* Pods-KeXueShangWang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeXueShangWang.debug.xcconfig"; path = "Target Support Files/Pods-KeXueShangWang/Pods-KeXueShangWang.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A7CB7726236C082900BA11A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7CB7765236C4B1500BA11A7 /* ShadowPath.framework in Frameworks */,
+				A7CB7785236F059400BA11A7 /* mbedtls.framework in Frameworks */,
+				A7CB777C236F04D200BA11A7 /* c_ares.framework in Frameworks */,
+				A7CB7779236F048D00BA11A7 /* libmaxminddb.framework in Frameworks */,
+				A7CB7769236F02D700BA11A7 /* ssLocal.framework in Frameworks */,
+				CD3E6EFD1D8AC311146E662B /* Pods_KeXueShangWang.framework in Frameworks */,
+				A7CB7760236C307800BA11A7 /* NetworkExtension.framework in Frameworks */,
+				A7CB7766236F02CE00BA11A7 /* ShadowPath.framework in Frameworks */,
+				A7CB7782236F054300BA11A7 /* libsodium.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7CB773F236C0A8200BA11A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7CB7763236C446400BA11A7 /* ssLocal.framework in Frameworks */,
+				5E9EDB2A5110C262952DA210 /* Pods_VPN2SSLocal.framework in Frameworks */,
+				A7CB7761236C309C00BA11A7 /* NetworkExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A7CB7720236C082900BA11A7 = {
+			isa = PBXGroup;
+			children = (
+				A7CB7784236F059400BA11A7 /* mbedtls.framework */,
+				A7CB7781236F054300BA11A7 /* libsodium.framework */,
+				A7CB777E236F051300BA11A7 /* libmaxminddb.framework */,
+				A7CB777B236F04D200BA11A7 /* c_ares.framework */,
+				A7CB7778236F048D00BA11A7 /* libmaxminddb.framework */,
+				A7CB772B236C082900BA11A7 /* KeXueShangWang */,
+				A7CB7743236C0A8200BA11A7 /* VPN2SSLocal */,
+				A7CB772A236C082900BA11A7 /* Products */,
+				A7CB7751236C0BD200BA11A7 /* Frameworks */,
+				EF181450096234B2BB12755D /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		A7CB772A236C082900BA11A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A7CB7729236C082900BA11A7 /* KeXueShangWang.app */,
+				A7CB7742236C0A8200BA11A7 /* VPN2SSLocal.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A7CB772B236C082900BA11A7 /* KeXueShangWang */ = {
+			isa = PBXGroup;
+			children = (
+				A7CB7754236C0C7600BA11A7 /* Simple */,
+				A7CB7750236C0AAC00BA11A7 /* KeXueShangWang.entitlements */,
+				A7CB772C236C082900BA11A7 /* AppDelegate.swift */,
+				A7CB772E236C082900BA11A7 /* ViewController.swift */,
+				A7CB7730236C082900BA11A7 /* Main.storyboard */,
+				A7CB7733236C082C00BA11A7 /* Assets.xcassets */,
+				A7CB7735236C082C00BA11A7 /* LaunchScreen.storyboard */,
+				A7CB7738236C082C00BA11A7 /* Info.plist */,
+			);
+			path = KeXueShangWang;
+			sourceTree = "<group>";
+		};
+		A7CB7743236C0A8200BA11A7 /* VPN2SSLocal */ = {
+			isa = PBXGroup;
+			children = (
+				A7CB7744236C0A8200BA11A7 /* PacketTunnelProvider.h */,
+				A7CB7745236C0A8200BA11A7 /* PacketTunnelProvider.m */,
+				A7CB7747236C0A8200BA11A7 /* Info.plist */,
+				A7CB7748236C0A8200BA11A7 /* VPN2SSLocal.entitlements */,
+			);
+			path = VPN2SSLocal;
+			sourceTree = "<group>";
+		};
+		A7CB7751236C0BD200BA11A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7CB7764236C4B1400BA11A7 /* ShadowPath.framework */,
+				A7CB7762236C446400BA11A7 /* ssLocal.framework */,
+				A7CB775F236C307800BA11A7 /* NetworkExtension.framework */,
+				06553099D6337F230EA28BD9 /* Pods_KeXueShangWang.framework */,
+				5421D52D8CF9DA9A4B5AA7D2 /* Pods_VPN2SSLocal.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A7CB7754236C0C7600BA11A7 /* Simple */ = {
+			isa = PBXGroup;
+			children = (
+				A7CB7755236C0CCB00BA11A7 /* SimpleVC.swift */,
+				A7CB7787236F497300BA11A7 /* JRule.swift */,
+				A7CB775B236C1B5600BA11A7 /* UUID.swift */,
+				A7CB7759236C1A7000BA11A7 /* SimpleManager.swift */,
+				A7CB7757236C0CFC00BA11A7 /* HTTP.swift */,
+				A7CB775D236C248D00BA11A7 /* ProviderManager.swift */,
+			);
+			path = Simple;
+			sourceTree = "<group>";
+		};
+		EF181450096234B2BB12755D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FC0AC31AC3D85BC56FD65B9A /* Pods-KeXueShangWang.debug.xcconfig */,
+				56FABF1FF3C54E23F8B7DD9D /* Pods-KeXueShangWang.release.xcconfig */,
+				90344851807454BE1311F6D3 /* Pods-VPN2SSLocal.debug.xcconfig */,
+				C4AACE9F5955B45E86F3A648 /* Pods-VPN2SSLocal.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A7CB7728236C082900BA11A7 /* KeXueShangWang */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7CB773B236C082C00BA11A7 /* Build configuration list for PBXNativeTarget "KeXueShangWang" */;
+			buildPhases = (
+				80A6E3E0B19FE6C8267BACDC /* [CP] Check Pods Manifest.lock */,
+				A7CB7725236C082900BA11A7 /* Sources */,
+				A7CB7726236C082900BA11A7 /* Frameworks */,
+				A7CB7727236C082900BA11A7 /* Resources */,
+				A7CB774F236C0A8200BA11A7 /* Embed App Extensions */,
+				74F200EEFEEA9725B2CB2B41 /* [CP] Embed Pods Frameworks */,
+				A7CB7768236F02CF00BA11A7 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A7CB774A236C0A8200BA11A7 /* PBXTargetDependency */,
+			);
+			name = KeXueShangWang;
+			productName = KeXueShangWang;
+			productReference = A7CB7729236C082900BA11A7 /* KeXueShangWang.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A7CB7741236C0A8200BA11A7 /* VPN2SSLocal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7CB774C236C0A8200BA11A7 /* Build configuration list for PBXNativeTarget "VPN2SSLocal" */;
+			buildPhases = (
+				2AFB1D9F27CBD4096668E23C /* [CP] Check Pods Manifest.lock */,
+				A7CB773E236C0A8200BA11A7 /* Sources */,
+				A7CB773F236C0A8200BA11A7 /* Frameworks */,
+				A7CB7740236C0A8200BA11A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VPN2SSLocal;
+			productName = VPN2SSLocal;
+			productReference = A7CB7742236C0A8200BA11A7 /* VPN2SSLocal.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A7CB7721236C082900BA11A7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "宋志京";
+				TargetAttributes = {
+					A7CB7728236C082900BA11A7 = {
+						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.NetworkExtensions.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					A7CB7741236C0A8200BA11A7 = {
+						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.NetworkExtensions.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = A7CB7724236C082900BA11A7 /* Build configuration list for PBXProject "KeXueShangWang" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A7CB7720236C082900BA11A7;
+			productRefGroup = A7CB772A236C082900BA11A7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A7CB7728236C082900BA11A7 /* KeXueShangWang */,
+				A7CB7741236C0A8200BA11A7 /* VPN2SSLocal */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A7CB7727236C082900BA11A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7CB7737236C082C00BA11A7 /* LaunchScreen.storyboard in Resources */,
+				A7CB7734236C082C00BA11A7 /* Assets.xcassets in Resources */,
+				A7CB7732236C082900BA11A7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7CB7740236C0A8200BA11A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2AFB1D9F27CBD4096668E23C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VPN2SSLocal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74F200EEFEEA9725B2CB2B41 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KeXueShangWang/Pods-KeXueShangWang-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KeXueShangWang/Pods-KeXueShangWang-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeXueShangWang/Pods-KeXueShangWang-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80A6E3E0B19FE6C8267BACDC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KeXueShangWang-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A7CB7725236C082900BA11A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7CB7788236F497400BA11A7 /* JRule.swift in Sources */,
+				A7CB775C236C1B5600BA11A7 /* UUID.swift in Sources */,
+				A7CB772F236C082900BA11A7 /* ViewController.swift in Sources */,
+				A7CB7758236C0CFC00BA11A7 /* HTTP.swift in Sources */,
+				A7CB775A236C1A7000BA11A7 /* SimpleManager.swift in Sources */,
+				A7CB775E236C248D00BA11A7 /* ProviderManager.swift in Sources */,
+				A7CB7756236C0CCB00BA11A7 /* SimpleVC.swift in Sources */,
+				A7CB772D236C082900BA11A7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7CB773E236C0A8200BA11A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7CB7746236C0A8200BA11A7 /* PacketTunnelProvider.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A7CB774A236C0A8200BA11A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A7CB7741236C0A8200BA11A7 /* VPN2SSLocal */;
+			targetProxy = A7CB7749236C0A8200BA11A7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A7CB7730236C082900BA11A7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7CB7731236C082900BA11A7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A7CB7735236C082C00BA11A7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7CB7736236C082C00BA11A7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A7CB7739236C082C00BA11A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A7CB773A236C082C00BA11A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A7CB773C236C082C00BA11A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC0AC31AC3D85BC56FD65B9A /* Pods-KeXueShangWang.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = KeXueShangWang/KeXueShangWang.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6YFU3ZSWW4;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = KeXueShangWang/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = U0.ss;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A7CB773D236C082C00BA11A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56FABF1FF3C54E23F8B7DD9D /* Pods-KeXueShangWang.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = KeXueShangWang/KeXueShangWang.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6YFU3ZSWW4;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = KeXueShangWang/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = U0.ss;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A7CB774D236C0A8200BA11A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90344851807454BE1311F6D3 /* Pods-VPN2SSLocal.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = VPN2SSLocal/VPN2SSLocal.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6YFU3ZSWW4;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = VPN2SSLocal/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = U0.ss.VPN2SSLocal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A7CB774E236C0A8200BA11A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4AACE9F5955B45E86F3A648 /* Pods-VPN2SSLocal.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = VPN2SSLocal/VPN2SSLocal.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6YFU3ZSWW4;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = VPN2SSLocal/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = U0.ss.VPN2SSLocal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A7CB7724236C082900BA11A7 /* Build configuration list for PBXProject "KeXueShangWang" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7CB7739236C082C00BA11A7 /* Debug */,
+				A7CB773A236C082C00BA11A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7CB773B236C082C00BA11A7 /* Build configuration list for PBXNativeTarget "KeXueShangWang" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7CB773C236C082C00BA11A7 /* Debug */,
+				A7CB773D236C082C00BA11A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7CB774C236C0A8200BA11A7 /* Build configuration list for PBXNativeTarget "VPN2SSLocal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7CB774D236C0A8200BA11A7 /* Debug */,
+				A7CB774E236C0A8200BA11A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A7CB7721236C082900BA11A7 /* Project object */;
+}

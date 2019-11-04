@@ -1,0 +1,6 @@
+framework module c_ares {
+  umbrella header "c_ares.h"
+
+  export *
+  module * { export * }
+}
