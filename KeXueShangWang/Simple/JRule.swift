@@ -36,20 +36,27 @@ class JRule: NSObject{
                         if str.hasPrefix("||") {
                             let startIndex = str.index(str.startIndex, offsetBy: 2)
                             str = String(str[startIndex..<str.endIndex])
-                        }else if str.hasPrefix("|") {
+                        }
+                        if str.hasPrefix("|") {
                             let startIndex = str.index(str.startIndex, offsetBy: 1)
                             str = String(str[startIndex..<str.endIndex])
-                        }else if str.hasPrefix("https://") {
+                        }
+                        if str.hasPrefix("https://") {
                             let startIndex = str.index(str.startIndex, offsetBy: 8)
                             str = String(str[startIndex..<str.endIndex])
-                        }else if str.hasPrefix("http://") {
+                        }
+                        if str.hasPrefix("http://") {
                             let startIndex = str.index(str.startIndex, offsetBy: 7)
                             str = String(str[startIndex..<str.endIndex])
+                        }
+                        if str.hasPrefix(".") {
+//                            continue
                         }
                         count += 1
                         retStr += "DOMAIN-SUFFIX, "+str+",PROXY\n"
                     }
                     do {
+                        print(count)
                         try self.setRule(str: retStr)
                     }catch{
                         print(error)
@@ -79,6 +86,6 @@ class JRule: NSObject{
         
         let actionStr = "{+forward-rule}\n" + str
         try actionStr.write(to: action, atomically: true, encoding: String.Encoding.utf8)
-        print(actionStr)
+//        print(actionStr)
     }
 }

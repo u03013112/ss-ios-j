@@ -16,15 +16,71 @@ static int localPort = 0;
 static int proxyPort = 0;
 void ss_local_handler(int fd, void *udata);
 void ss_client_handler(int fd, void *udata);
-@implementation PacketTunnelProvider
 
+@interface PacketTunnelProvider(){
+    NSString *host;
+    NSString *method;
+    NSString *passwd;
+    int port;
+}
+@end
+
+@implementation PacketTunnelProvider
 - (void)startTunnelWithOptions:(NSDictionary *)options completionHandler:(void (^)(NSError *))completionHandler {
 //    [self openLog];
     NSLog(@"startTunnelWithOptions");
     self->_pendingStartCompletion = completionHandler;
-    [NSThread detachNewThreadSelector:@selector(startSSLocal) toTarget:self withObject:nil];
+    self->port = 0;
+    [NSThread detachNewThreadSelector:@selector(updatePerSec) toTarget:self withObject:nil];
+    
+//    [NSThread detachNewThreadSelector:@selector(startSSLocal) toTarget:self withObject:nil];
 }
 
+-(void) updatePerSec {
+    for (;;){
+        [self keepalive];
+        sleep(30);
+    }
+}
+    
+-(void) keepalive {
+    NSURL *tokenUrl = [[NSFileManager.defaultManager containerURLForSecurityApplicationGroupIdentifier:@"group.U0.ss"]URLByAppendingPathComponent:@"token.conf"];
+    NSString *confContent = [NSString stringWithContentsOfURL:tokenUrl encoding:NSUTF8StringEncoding error:nil];
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[confContent dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:nil];
+    NSString *token = json[@"token"];
+    if (token == nil){
+        exit(0);
+    }
+    NSURL *url = [NSURL URLWithString:@"https://frp.u03013112.win:18022/v1/ios/config"];
+    NSMutableURLRequest *mutableRequest = [NSMutableURLRequest requestWithURL:url];
+    NSDictionary *head = [[NSDictionary alloc]initWithObjectsAndKeys:@"application/json",@"Content-Type", nil];
+    NSMutableDictionary *postBodyDict = [[NSMutableDictionary alloc]init];
+    [postBodyDict setObject:token forKey:@"token"];
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:postBodyDict options:NSJSONWritingPrettyPrinted error:nil];
+    [mutableRequest setHTTPMethod:@"POST"];
+    [mutableRequest setHTTPBody:postData];
+    [mutableRequest setAllHTTPHeaderFields:head];
+    
+    NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:mutableRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error == nil) {
+            NSDictionary *d= [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+            if ([d objectForKey:@"error"]!=nil){
+                exit(0);
+            }
+            if (self->port == 0){
+                self->host = [d objectForKey:@"IP"];
+                self->method = [d objectForKey:@"method"];
+                self->passwd = [d objectForKey:@"passwd"];
+                self->port = [[d objectForKey:@"port"]intValue];
+                [NSThread detachNewThreadSelector:@selector(startSSLocal) toTarget:self withObject:nil];
+            }
+        }else{
+            exit(0);
+        }
+    }];
+    [task resume];
+}
+    
 - (void)stopTunnelWithReason:(NEProviderStopReason)reason completionHandler:(void (^)(void))completionHandler {
     // Add code here to start the process of stopping the tunnel.
     completionHandler();
@@ -45,10 +101,15 @@ void ss_client_handler(int fd, void *udata);
 
     
 - (void)startSSLocal {
-    char *host = "64.64.233.232";
-    int port = 58700;
-    char *password = "xKpQV8wUVe";
-    char *method = "aes-256-gcm";
+//    char *host = "64.64.233.232";
+//    int port = 58700;
+//    char *password = "xKpQV8wUVe";
+//    char *method = "aes-256-gcm";
+
+    char *host = (char *)[self->host UTF8String];
+    int port = self->port;
+    char *password = (char *)[self->passwd UTF8String];
+    char *method = (char *)[self->method UTF8String];
     
     profile_t profile;
     memset(&profile, 0, sizeof(profile_t));
@@ -60,7 +121,7 @@ void ss_client_handler(int fd, void *udata);
     profile.local_port = 0;
     profile.timeout = 600;
     profile.verbose = 1;
-    profile.log = [[[[NSFileManager.defaultManager containerURLForSecurityApplicationGroupIdentifier:@"group.U0.ss"]URLByAppendingPathComponent:@"a.log"]path]UTF8String];
+    profile.log = (char*)[[[[NSFileManager.defaultManager containerURLForSecurityApplicationGroupIdentifier:@"group.U0.ss"]URLByAppendingPathComponent:@"a.log"]path]UTF8String];
     start_ss_local_server_with_callback(profile, ss_local_handler, (__bridge void *)self);
 }
     

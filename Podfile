@@ -9,7 +9,9 @@ target 'KeXueShangWang' do
   pod 'Eureka', '~> 4.3.1'
   pod 'Cartography'
   pod 'KeychainAccess'
-
+  pod 'SwiftyStoreKit'
+  pod 'MBProgressHUD'
+  pod 'AsyncSwift'
 end
 
 target 'VPN2SSLocal' do

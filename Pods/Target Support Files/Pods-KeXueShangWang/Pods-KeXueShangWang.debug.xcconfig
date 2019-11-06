@@ -1,9 +1,9 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Cartography" "${PODS_CONFIGURATION_BUILD_DIR}/Eureka" "${PODS_CONFIGURATION_BUILD_DIR}/KeychainAccess"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AsyncSwift" "${PODS_CONFIGURATION_BUILD_DIR}/Cartography" "${PODS_CONFIGURATION_BUILD_DIR}/Eureka" "${PODS_CONFIGURATION_BUILD_DIR}/KeychainAccess" "${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyStoreKit"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Cartography/Cartography.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Eureka/Eureka.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/KeychainAccess/KeychainAccess.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AsyncSwift/Async.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Cartography/Cartography.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Eureka/Eureka.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/KeychainAccess/KeychainAccess.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD/MBProgressHUD.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -framework "Cartography" -framework "Eureka" -framework "Foundation" -framework "KeychainAccess" -framework "UIKit"
+OTHER_LDFLAGS = $(inherited) -framework "Async" -framework "Cartography" -framework "CoreGraphics" -framework "Eureka" -framework "Foundation" -framework "KeychainAccess" -framework "MBProgressHUD" -framework "QuartzCore" -framework "SwiftyStoreKit" -framework "UIKit"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

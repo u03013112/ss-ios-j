@@ -1,24 +1,36 @@
 PODS:
+  - AsyncSwift (2.0.4)
   - Cartography (4.0.0)
   - Eureka (4.3.1)
   - KeychainAccess (4.1.0)
+  - MBProgressHUD (1.1.0)
+  - SwiftyStoreKit (0.15.0)
 
 DEPENDENCIES:
+  - AsyncSwift
   - Cartography
   - Eureka (~> 4.3.1)
   - KeychainAccess
+  - MBProgressHUD
+  - SwiftyStoreKit
 
 SPEC REPOS:
   trunk:
+    - AsyncSwift
     - Cartography
     - Eureka
     - KeychainAccess
+    - MBProgressHUD
+    - SwiftyStoreKit
 
 SPEC CHECKSUMS:
+  AsyncSwift: 65775a7b32e740609b24969ece3de58723b9dc3e
   Cartography: c5626d29056b20f1e95c017326ee4df57cc39ad8
   Eureka: 28ea296f06710f6745266b71f17862048941a32d
   KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  SwiftyStoreKit: 033d06b6f87955405d3f844a18a7687c2438592a
 
-PODFILE CHECKSUM: 0242328496c675f2054c3ee76628bffffb850b6b
+PODFILE CHECKSUM: 85bbe4da852f9349491bf20198db58d931118d29
 
 COCOAPODS: 1.8.3

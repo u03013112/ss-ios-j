@@ -36,7 +36,9 @@ open class SimpleManager {
                 do {
                     let tokenJson = try JSONSerialization.data(withJSONObject: tokenDict, options: .prettyPrinted)
                     let tokenConf = String(data:tokenJson,encoding: .utf8) ?? ""
-//                    try tokenConf.write(to: ShadowCoel.sharedTokenUrl(), atomically: true, encoding: String.Encoding.utf8)
+                    let m = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.U0.ss")
+                    let tokenUrl = m?.appendingPathComponent("token.conf") ?? URL(fileURLWithPath: "")
+                    try tokenConf.write(to: tokenUrl, atomically: true, encoding: String.Encoding.utf8)
                 }catch{
                     print(error)
                 }
@@ -65,7 +67,13 @@ open class SimpleManager {
     public var method = ""
     public var passwd = ""
     
-    public var expireDate = Double(0)
+    public var expireDate = Double(0) {
+        didSet {
+            if (oldValue != expireDate){
+                NotificationCenter.default.post(name: Foundation.Notification.Name(rawValue: kExDateChanged), object: nil)
+            }
+        }
+    }
  
     
     public func timeIntervalChangeToTimeStr(timeInterval:Double, _ dateFormat:String? = "yyyy-MM-dd HH:mm:ss") -> String {

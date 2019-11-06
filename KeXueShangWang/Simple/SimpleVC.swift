@@ -20,14 +20,13 @@ class SimpleVC: FormViewController{
     var obIsAdded = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Simple"
-        
         if (SimpleManager.sharedManager.isPACMod){
             JRule.setGFW()
         }else{
             JRule.setAll()
         }
         login()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateExDate), name: NSNotification.Name(rawValue: kExDateChanged), object: nil)
         NotificationCenter.default.addObserver(forName: NSNotification.Name.NEVPNStatusDidChange, object: nil, queue: nil) { (notification) in
 //            print("received NEVPNStatusDidChangeNotification")
             let nevpnconn = notification.object as! NEVPNConnection
@@ -55,17 +54,17 @@ class SimpleVC: FormViewController{
     func generateLoginSection() -> Section {
         let section = Section()
         section
-//            <<< ActionRow(kFromVIPExpire) {
-//                $0.title = "VIP 有效期："
-//                $0.value = "-"
-//                if SimpleManager.sharedManager.expireDate > 0 {
-//                    $0.value = SimpleManager.sharedManager.timeIntervalChangeToTimeStr(timeInterval: SimpleManager.sharedManager.expireDate)
-//                }
-//            }.onCellSelection({(cell, row) -> () in
-//                cell.setSelected(false, animated: true)
-//                let vc = PurchaseVC()
-//                self.navigationController?.pushViewController(vc,animated: true)
-//            })
+            <<< ActionRow(kFromVIPExpire) {
+                $0.title = "VIP 有效期："
+                $0.value = "-"
+                if SimpleManager.sharedManager.expireDate > 0 {
+                    $0.value = SimpleManager.sharedManager.timeIntervalChangeToTimeStr(timeInterval: SimpleManager.sharedManager.expireDate)
+                }
+            }.onCellSelection({(cell, row) -> () in
+                cell.setSelected(false, animated: true)
+                let vc = PurchaseVC()
+                self.navigationController?.pushViewController(vc,animated: true)
+            })
             <<< SwitchRow(kFormPACMode) {
                 $0.title = "智能路由"
                 $0.value = SimpleManager.sharedManager.isPACMod
@@ -115,46 +114,11 @@ class SimpleVC: FormViewController{
     @objc func onLoginSuccess() {
         
     }
-    
-    @objc func onVPNStatusChanged() {
-        
-    }
-    
-    
-    func getVPNConfig (completion: @escaping ([String: Any]?, Error?, String?) -> Void) {
-        let token = SimpleManager.sharedManager.token
-        if token == "" {
-            return
-        }
-        let dict = ["token":token]
-        
-        let completion1 = {
-            (result:[String: Any]?, error:Error?) -> Void in
-            if let error = error {
-                completion(nil,error,nil)
-                return
-            }
-            if let result = result {
-                if (result["error"] as? String != nil){
-                    completion(nil,nil,result["error"] as? String)
-                    return
-                }
-                let ret = [
-                    "IP":result["IP"] as! String,
-                    "port":Int(result["port"] as! String) ?? 58700,
-                    "method":result["method"] as! String,
-                    "passwd":result["passwd"] as! String
-                ] as [String : Any]
-                completion(ret,nil,nil)
-                return
-            }
-        }
-        HTTP.shared.postRequest(urlStr: "https://frp.u03013112.win:18022/v1/ios/config", data: dict, completion: completion1)
-    }
+
     func login() {
         login(success:{ (token,ex) in
             SimpleManager.sharedManager.token = token
-//            self.updateExDate()
+            SimpleManager.sharedManager.expireDate = ex
         },failed: { (errStr) in
             let alert = UIAlertController(title: "err", message: errStr, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "comfirm", style: .cancel, handler:{ (a) in
@@ -182,7 +146,6 @@ class SimpleVC: FormViewController{
                 if result["expiresDate"] as? String != nil{
                     let exStr = result["expiresDate"] as! String
                     let ex = Double(exStr)
-                    SimpleManager.sharedManager.expireDate = ex ?? 0
                     success(result["token"] as! String,ex ?? 0)
                 }else{
                     success(result["token"] as! String,0)
@@ -215,5 +178,10 @@ class SimpleVC: FormViewController{
                 }
             }
         }
+    }
+    @objc func updateExDate() {
+        let exRow = self.form.rowBy(tag:kFromVIPExpire) as! ActionRow
+        exRow.value = SimpleManager.sharedManager.timeIntervalChangeToTimeStr(timeInterval: SimpleManager.sharedManager.expireDate)
+        exRow.reload()
     }
 }

@@ -22,12 +22,9 @@
 		A7CB775E236C248D00BA11A7 /* ProviderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB775D236C248D00BA11A7 /* ProviderManager.swift */; };
 		A7CB7760236C307800BA11A7 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB775F236C307800BA11A7 /* NetworkExtension.framework */; };
 		A7CB7761236C309C00BA11A7 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB775F236C307800BA11A7 /* NetworkExtension.framework */; };
-		A7CB7763236C446400BA11A7 /* ssLocal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB7762236C446400BA11A7 /* ssLocal.framework */; };
 		A7CB7765236C4B1500BA11A7 /* ShadowPath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB7764236C4B1400BA11A7 /* ShadowPath.framework */; };
 		A7CB7766236F02CE00BA11A7 /* ShadowPath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB7764236C4B1400BA11A7 /* ShadowPath.framework */; };
 		A7CB7767236F02CE00BA11A7 /* ShadowPath.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB7764236C4B1400BA11A7 /* ShadowPath.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A7CB7769236F02D700BA11A7 /* ssLocal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB7762236C446400BA11A7 /* ssLocal.framework */; };
-		A7CB776A236F02D700BA11A7 /* ssLocal.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB7762236C446400BA11A7 /* ssLocal.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A7CB7779236F048D00BA11A7 /* libmaxminddb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB7778236F048D00BA11A7 /* libmaxminddb.framework */; };
 		A7CB777C236F04D200BA11A7 /* c_ares.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB777B236F04D200BA11A7 /* c_ares.framework */; };
 		A7CB777D236F04D200BA11A7 /* c_ares.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB777B236F04D200BA11A7 /* c_ares.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -37,6 +34,11 @@
 		A7CB7785236F059400BA11A7 /* mbedtls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB7784236F059400BA11A7 /* mbedtls.framework */; };
 		A7CB7786236F059400BA11A7 /* mbedtls.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB7784236F059400BA11A7 /* mbedtls.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A7CB7788236F497400BA11A7 /* JRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB7787236F497300BA11A7 /* JRule.swift */; };
+		A7CB778D23713E5A00BA11A7 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB778B23713E5900BA11A7 /* Purchase.swift */; };
+		A7CB778E23713E5A00BA11A7 /* PurchaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB778C23713E5900BA11A7 /* PurchaseVC.swift */; };
+		A7CB77902371887700BA11A7 /* ActionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB778F2371887700BA11A7 /* ActionRow.swift */; };
+		A7CB77A32371D8B400BA11A7 /* ssLocal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB77A22371D8B400BA11A7 /* ssLocal.framework */; };
+		A7CB77A42371D8B400BA11A7 /* ssLocal.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB77A22371D8B400BA11A7 /* ssLocal.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD3E6EFD1D8AC311146E662B /* Pods_KeXueShangWang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06553099D6337F230EA28BD9 /* Pods_KeXueShangWang.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,11 +70,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A7CB776A236F02D700BA11A7 /* ssLocal.framework in Embed Frameworks */,
 				A7CB777D236F04D200BA11A7 /* c_ares.framework in Embed Frameworks */,
 				A7CB7780236F051300BA11A7 /* libmaxminddb.framework in Embed Frameworks */,
 				A7CB7783236F054300BA11A7 /* libsodium.framework in Embed Frameworks */,
 				A7CB7786236F059400BA11A7 /* mbedtls.framework in Embed Frameworks */,
+				A7CB77A42371D8B400BA11A7 /* ssLocal.framework in Embed Frameworks */,
 				A7CB7767236F02CE00BA11A7 /* ShadowPath.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -104,7 +106,6 @@
 		A7CB775B236C1B5600BA11A7 /* UUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UUID.swift; sourceTree = "<group>"; };
 		A7CB775D236C248D00BA11A7 /* ProviderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderManager.swift; sourceTree = "<group>"; };
 		A7CB775F236C307800BA11A7 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
-		A7CB7762236C446400BA11A7 /* ssLocal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ssLocal.framework; path = Frameworks/ssLocal.framework; sourceTree = "<group>"; };
 		A7CB7764236C4B1400BA11A7 /* ShadowPath.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShadowPath.framework; path = Frameworks/ShadowPath.framework; sourceTree = "<group>"; };
 		A7CB7778236F048D00BA11A7 /* libmaxminddb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libmaxminddb.framework; path = Frameworks/libmaxminddb.framework; sourceTree = "<group>"; };
 		A7CB777B236F04D200BA11A7 /* c_ares.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = c_ares.framework; path = Frameworks/c_ares.framework; sourceTree = "<group>"; };
@@ -112,6 +113,10 @@
 		A7CB7781236F054300BA11A7 /* libsodium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libsodium.framework; path = Frameworks/libsodium.framework; sourceTree = "<group>"; };
 		A7CB7784236F059400BA11A7 /* mbedtls.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mbedtls.framework; path = Frameworks/mbedtls.framework; sourceTree = "<group>"; };
 		A7CB7787236F497300BA11A7 /* JRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRule.swift; sourceTree = "<group>"; };
+		A7CB778B23713E5900BA11A7 /* Purchase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
+		A7CB778C23713E5900BA11A7 /* PurchaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseVC.swift; sourceTree = "<group>"; };
+		A7CB778F2371887700BA11A7 /* ActionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRow.swift; sourceTree = "<group>"; };
+		A7CB77A22371D8B400BA11A7 /* ssLocal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ssLocal.framework; path = Frameworks/ssLocal.framework; sourceTree = "<group>"; };
 		C4AACE9F5955B45E86F3A648 /* Pods-VPN2SSLocal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VPN2SSLocal.release.xcconfig"; path = "Target Support Files/Pods-VPN2SSLocal/Pods-VPN2SSLocal.release.xcconfig"; sourceTree = "<group>"; };
 		FC0AC31AC3D85BC56FD65B9A /* Pods-KeXueShangWang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeXueShangWang.debug.xcconfig"; path = "Target Support Files/Pods-KeXueShangWang/Pods-KeXueShangWang.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,10 +127,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7CB7765236C4B1500BA11A7 /* ShadowPath.framework in Frameworks */,
+				A7CB77A32371D8B400BA11A7 /* ssLocal.framework in Frameworks */,
 				A7CB7785236F059400BA11A7 /* mbedtls.framework in Frameworks */,
 				A7CB777C236F04D200BA11A7 /* c_ares.framework in Frameworks */,
 				A7CB7779236F048D00BA11A7 /* libmaxminddb.framework in Frameworks */,
-				A7CB7769236F02D700BA11A7 /* ssLocal.framework in Frameworks */,
 				CD3E6EFD1D8AC311146E662B /* Pods_KeXueShangWang.framework in Frameworks */,
 				A7CB7760236C307800BA11A7 /* NetworkExtension.framework in Frameworks */,
 				A7CB7766236F02CE00BA11A7 /* ShadowPath.framework in Frameworks */,
@@ -137,7 +142,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7CB7763236C446400BA11A7 /* ssLocal.framework in Frameworks */,
 				5E9EDB2A5110C262952DA210 /* Pods_VPN2SSLocal.framework in Frameworks */,
 				A7CB7761236C309C00BA11A7 /* NetworkExtension.framework in Frameworks */,
 			);
@@ -149,6 +153,7 @@
 		A7CB7720236C082900BA11A7 = {
 			isa = PBXGroup;
 			children = (
+				A7CB77A22371D8B400BA11A7 /* ssLocal.framework */,
 				A7CB7784236F059400BA11A7 /* mbedtls.framework */,
 				A7CB7781236F054300BA11A7 /* libsodium.framework */,
 				A7CB777E236F051300BA11A7 /* libmaxminddb.framework */,
@@ -201,7 +206,6 @@
 			isa = PBXGroup;
 			children = (
 				A7CB7764236C4B1400BA11A7 /* ShadowPath.framework */,
-				A7CB7762236C446400BA11A7 /* ssLocal.framework */,
 				A7CB775F236C307800BA11A7 /* NetworkExtension.framework */,
 				06553099D6337F230EA28BD9 /* Pods_KeXueShangWang.framework */,
 				5421D52D8CF9DA9A4B5AA7D2 /* Pods_VPN2SSLocal.framework */,
@@ -218,6 +222,9 @@
 				A7CB7759236C1A7000BA11A7 /* SimpleManager.swift */,
 				A7CB7757236C0CFC00BA11A7 /* HTTP.swift */,
 				A7CB775D236C248D00BA11A7 /* ProviderManager.swift */,
+				A7CB778B23713E5900BA11A7 /* Purchase.swift */,
+				A7CB778C23713E5900BA11A7 /* PurchaseVC.swift */,
+				A7CB778F2371887700BA11A7 /* ActionRow.swift */,
 			);
 			path = Simple;
 			sourceTree = "<group>";
@@ -417,8 +424,11 @@
 			files = (
 				A7CB7788236F497400BA11A7 /* JRule.swift in Sources */,
 				A7CB775C236C1B5600BA11A7 /* UUID.swift in Sources */,
+				A7CB778D23713E5A00BA11A7 /* Purchase.swift in Sources */,
 				A7CB772F236C082900BA11A7 /* ViewController.swift in Sources */,
 				A7CB7758236C0CFC00BA11A7 /* HTTP.swift in Sources */,
+				A7CB77902371887700BA11A7 /* ActionRow.swift in Sources */,
+				A7CB778E23713E5A00BA11A7 /* PurchaseVC.swift in Sources */,
 				A7CB775A236C1A7000BA11A7 /* SimpleManager.swift in Sources */,
 				A7CB775E236C248D00BA11A7 /* ProviderManager.swift in Sources */,
 				A7CB7756236C0CCB00BA11A7 /* SimpleVC.swift in Sources */,
@@ -601,7 +611,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = U0.ss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -626,7 +636,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = U0.ss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
